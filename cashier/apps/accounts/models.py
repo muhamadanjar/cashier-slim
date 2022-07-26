@@ -3,7 +3,12 @@ from django.db import models
 
 
 class User(AbstractUser):
-    role = models.CharField(max_length=10, default='user')
+    class RoleChoices(models.TextChoices):
+        ADMIN = 'ADMIN'
+        USER = 'USER'
+        MANAGER = 'MANAGER'
+        CUSTOMER = 'CUSTOMER'
+    role = models.CharField(max_length=10, default=RoleChoices.USER, choices=RoleChoices.choices)
 
 
 class Customer(models.Model):
@@ -15,13 +20,13 @@ class Customer(models.Model):
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    phone = models.CharField(max_length=20)
-    address = models.CharField(max_length=255)
-    city = models.CharField(max_length=255)
-    state = models.CharField(max_length=255)
-    zip = models.CharField(max_length=5)
-    country = models.CharField(max_length=255)
-    logo = models.ImageField(upload_to='images/', blank=True)
+    phone = models.CharField(max_length=20, null=True, blank=True)
+    address = models.CharField(max_length=255, null=True, blank=True)
+    city = models.CharField(max_length=255, null=True, blank=True)
+    state = models.CharField(max_length=255, null=True, blank=True)
+    zip = models.CharField(max_length=5, null=True, blank=True)
+    country = models.CharField(max_length=255, null=True, blank=True)
+    picture = models.ImageField(upload_to='profile/', blank=True)
 
     def __str__(self):
         return self.user.username
