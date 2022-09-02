@@ -133,7 +133,7 @@ dmypy.json
 .idea
 .vscode
 
-siberalam/local_settings.py
+cashier/local_settings.py
 media/*
 static/*
 
