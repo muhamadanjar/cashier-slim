@@ -1,0 +1,15 @@
+{% load static %}
+{% block javascript %}
+        <!-- JAVASCRIPT -->
+        <script src="{% static 'backoffice/libs/jquery/dist/jquery.min.js' %}"></script>
+        <script src="{% static 'backoffice/libs/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+        <script src="{% static 'backoffice/libs/metismenu/dist/metisMenu.min.js' %}"></script>
+        <script src="{% static 'backoffice/libs/simplebar/dist/simplebar.min.js' %}"></script>
+        <script src="{% static 'backoffice/libs/node-waves/dist/waves.min.js' %}"></script>
+
+        {% block extra_js %}
+        
+        {% endblock %}
+        <!-- App js -->
+        <script src="{% static 'backoffice/js/app.js' %}"></script>
+{% endblock %}

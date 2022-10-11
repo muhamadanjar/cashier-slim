@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Siberalam Backoffice">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shorcut icon" href="{% static 'favicom.ico' %}">
+    {% block css %}
+        {% block extra_css %}
+        
+        {% endblock %}
+        <!-- Bootstrap Css -->
+        <link href="{% static 'backoffice/css/bootstrap.min.css' %}" id="bootstrap-style" rel="stylesheet" type="text/css" />
+        <!-- Icons Css -->
+        <link href="{% static 'backoffice/css/icons.min.css' %}" rel="stylesheet" type="text/css" />
+        <!-- App Css-->
+        <link href="{% static 'backoffice/css/app.min.css' %}" id="app-style" rel="stylesheet" type="text/css" />
+    
+    {% endblock %}
+
+    <title>{title}</title>
+</head>
+<body data-sidebar="dark">
+    <div id="layout-wrapper">
+        {% block header %}
+            {% include 'backoffice/partials/header.html' %}
+        {% endblock %}
+        {% block sidebar %}
+            {% include 'backoffice/partials/sidebar.html' %}
+        {% endblock %}
+
+        <div class="main-content">
+            <div class="page-content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                                <h4 class="mb-sm-0 font-size-18">{{ title }}</h4>
+                                <div class="page-title-right">
+
+                                    <ol class="breadcrumb m-0">
+                                        <li class="breadcrumb-item">
+                                            <a href="#">{pageView}</a>
+                                        </li>
+                                        <li class="breadcrumb-item active">
+                                            {title}
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% block contents %}
+                    
+                    {% endblock %}
+                </div>
+            </div>
+
+            {% block footer %}
+            
+            {% endblock %}
+        </div>
+    </div>
+
+    {% block javascript %}
+        <script src="{% static 'backoffice/libs/jquery/dist/jquery.min.js' %}"></script>
+        <script src="{% static 'backoffice/libs/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+        <script src="{% static 'backoffice/libs/metismenu/dist/metisMenu.min.js' %}"></script>
+        <script src="{% static 'backoffice/libs/simplebar/dist/simplebar.min.js' %}"></script>
+        <script src="{% static 'backoffice/libs/node-waves/dist/waves.min.js' %}"></script>
+        {% block extra_js %}
+        
+        {% endblock %}
+        <script src="{% static "backoffice/js/app.js" %}"></script>
+    {% endblock %}
+</body>
+</html>

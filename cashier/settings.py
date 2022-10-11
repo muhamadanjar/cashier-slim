@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
     'rest_framework',
+    'allauth',
 
     'cashier.apps.accounts',
     'cashier.apps.product',
@@ -128,8 +129,29 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = 'media/'
 
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        }
+    },
+    'facebook':{
+           'METHOD': 'oauth2',
+            'SCOPE': ['email','public_profile', 'user_friends'],
+            'AUTH_PARAMS':{
+                'access_type': 'online',
+            }
+    }
+}
 
 AUTH_USER_MODEL = "accounts.User"
+LOGIN_URL = "/login"
+LOGOUT_REDIRECT_URL = "/"
+LOGIN_URL = "/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
