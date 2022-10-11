@@ -1,8 +1,6 @@
-from django.views.generic.edit import BaseCreateView
-
 from cashier.apps.accounts.forms import UserForm
 from cashier.apps.accounts.models import User
-from cashier.backoffice.views import BaseListView, BaseCreateFormView
+from cashier.backoffice.views import BaseListView, BaseCreateFormView, BaseFormView, BaseDeleteView
 
 
 class UserListView(BaseListView):
@@ -10,5 +8,13 @@ class UserListView(BaseListView):
     template_name = "backoffice/users/index.html"
 
 
-class UserCreateView(BaseCreateView):
+class UserCreateView(BaseCreateFormView):
     form_class = UserForm
+
+
+class UserEditView(BaseFormView):
+    form_class = UserForm
+
+
+class UserDeleteView(BaseDeleteView):
+    model = User

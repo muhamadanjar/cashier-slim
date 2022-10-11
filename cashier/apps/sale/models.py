@@ -23,11 +23,14 @@ class Order(models.Model):
     amount_change = MoneyField(max_digits=10, decimal_places=2)
     amount_payment = MoneyField(max_digits=10, decimal_places=2)
     order_date = models.DateTimeField(auto_now_add=True)
-    user = models.ForeignKey('accounts.User', on_delete=models.CASCADE)
-    customer = models.ForeignKey('accounts.Customer', on_delete=models.CASCADE, null=True, blank=True)
+    user = models.ForeignKey('accounts.User', on_delete=models.CASCADE, related_name='user')
+    customer = models.ForeignKey('accounts.Customer', on_delete=models.CASCADE, null=True, blank=True,
+                                 related_name='customer')
     notes = models.CharField(max_length=255, null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    order_lines = models.ManyToManyField("sale.OrderItem",
+                                         related_name='lines')
 
     def __str__(self):
         return str(self.id)
@@ -37,10 +40,10 @@ class OrderItem(models.Model):
     """
     Order item model
     """
-    order = models.ForeignKey(Order, on_delete=models.CASCADE)
-    item = models.ForeignKey('product.Item', on_delete=models.CASCADE)
+    order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name='items')
+    item = models.ForeignKey('product.Item', on_delete=models.CASCADE, related_name='product_item')
     quantity = models.IntegerField(default=1)
-    subtotal = models.DecimalField(max_digits=10, decimal_places=2)
+    subtotal = MoneyField(max_digits=10, decimal_places=2, null=True)
 
     def __str__(self):
         return str(self.order.name)

@@ -16,4 +16,9 @@ class ProductCategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Attribute)
 class ProductAttributeAdmin(admin.ModelAdmin):
-    list_display = ('name', 'display_order', 'created_at', 'updated_at', 'attribute_values')
+    list_display = ('name', 'display_order', 'created_at', 'updated_at')
+
+
+@admin.register(AttributeValue)
+class ProductAttributeValueAdmin(admin.ModelAdmin):
+    list_display = ('attribute', 'name', 'created_at', 'updated_at')
