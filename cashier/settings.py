@@ -40,7 +40,9 @@ INSTALLED_APPS = [
     
     'rest_framework',
     'allauth',
+    'crispy_forms',
 
+    'core',
     'cashier.apps.accounts',
     'cashier.apps.product',
     'cashier.apps.sale',
@@ -123,7 +125,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static_files')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static_files/')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

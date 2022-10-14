@@ -13,27 +13,34 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="waves-effect">
-                            <i class="bx bx-home"></i>
-                            <span key="t-farm">Pertambangan</span>
+                        <a href="javascript: void(0);" class="has-arrow waves-effect">
+                            <i class="bx bx-share-alt"></i>
+                            <span key="t-sale">Product</span>
                         </a>
+                        <ul class="sub-menu" aria-expanded="true">
+                            <li>
+                                <a href="{% url 'backoffice:product:index' %}" key="t-product-item">Item</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'backoffice:product:category:index' %}" key="t-product-category">Kategori</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript: void(0);" class="has-arrow waves-effect">
+                            <i class="bx bx-share-alt"></i>
+                            <span key="t-sale">Sale</span>
+                        </a>
+                        <ul class="sub-menu" aria-expanded="true">
+                            <li>
+                                <a href="{% url 'backoffice:transactions:index' %}" key="t-product-item">Order</a>
+                            </li>
+                        </ul>
                     </li>
                     <li>
                         <a href="#" class="waves-effect">
                             <i class="bx bx-page"></i>
                             <span key="t-page">Halaman</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="waves-effect">
-                            <i class="bx bx-home"></i>
-                            <span key="t-farm">Peternakan</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="waves-effect">
-                            <i class="bx bx-building"></i>
-                            <span key="t-company">Perusahaan</span>
                         </a>
                     </li>
 

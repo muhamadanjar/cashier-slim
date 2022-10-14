@@ -1,7 +1,7 @@
+import random
+
 from django.db import models
 from djmoney.models.fields import MoneyField
-
-from cashier.apps import accounts
 
 
 class Item(models.Model):
@@ -13,12 +13,17 @@ class Item(models.Model):
     price = MoneyField(max_digits=10, decimal_places=2)
     sell = MoneyField(max_digits=10, decimal_places=2)
     image = models.ImageField(upload_to='images/', blank=True)
-    user_id = models.ForeignKey('accounts.User', on_delete=models.CASCADE)
+    user = models.ForeignKey('accounts.User', on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.name
+
+    def save(self, *args, **kwargs):
+        if not self.code:
+            self.code = "PRD-" + str(random.randint(0,9)).zfill(10)
+        return super(Item, self).save(*args, **kwargs)
 
 
 class Category(models.Model):

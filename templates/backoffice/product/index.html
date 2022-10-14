@@ -1,0 +1,53 @@
+{% extends 'backoffice/layouts/vertical.html' %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Produk</h3>
+                    <div class="text-right">
+                        <a href="{% url 'backoffice:product:create' %}" class="btn btn-primary">Tambah</a>
+                    </div>
+                </div>
+
+                <table class="table">
+                    <thead>
+                    <tr>
+
+                        <td>Name</td>
+                        <td>Harga Beli</td>
+                        <td>Harga Jual</td>
+                        <td>Kategori</td>
+                        <td></td>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    {% for object in object_list %}
+                        <tr>
+
+                            <td>{{ object.name }}</td>
+                            <td>{{ object.price }}</td>
+                            <td>{{ object.sell }}</td>
+                            <td>{{ object.category }}</td>
+                            <td>
+                                <div class="dropdown">
+
+                                </div>
+                            </td>
+                        </tr>
+                    {% endfor %}
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}
+
+{% block extra_js %}
+
+{% endblock %}

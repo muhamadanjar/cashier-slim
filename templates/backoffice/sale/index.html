@@ -1,0 +1,33 @@
+{% extends "backoffice/layouts/vertical.html" %}
+
+{% block content %}
+    <div class="card">
+        <div class="card-body">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>Referenhes</th>
+                        <th>Status<th>
+                        <th>Amount<th>
+                        <th>Tanggal Pesan</th>
+                        <th>Timestamp</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for object in object_list %}
+                    <tr>
+                        <td>{{ object.name }}</td>
+                        <td>{{ object.reference }}</td>
+                        <td>{{ object.status }}</td>
+                        <td>Tax : {{ object.amount_tax }}, {{ object.amount_price }}</td>
+                        <td>{{ object.order_date }}</td>
+                        <td>{{ object.created_at }}, {{ object.updated_at }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

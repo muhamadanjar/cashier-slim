@@ -39,8 +39,9 @@ class BaseListView(ContextTitleMixin, ListView):
         return context
 
 
-class BaseFormView(FormMixin, DetailView):
+class BaseFormView(ContextTitleMixin, FormMixin, DetailView):
     template_name = "backoffice/form.html"
+    title_page = "Edit Form"
     success_url = "/backoffice"
 
     def post(self, request, *args, **kwargs):
@@ -80,7 +81,7 @@ class BaseDeleteView(DetailView):
 
 
 @method_decorator(login_required, name='dispatch')
-class BaseCreateFormView(CreateView):
+class BaseCreateFormView(CreateView, FormMixin):
     template_name = "backoffice/form.html"
     success_url = "/backoffice"
 
