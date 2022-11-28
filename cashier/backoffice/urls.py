@@ -5,5 +5,6 @@ urlpatterns = [
     path('', views.DashboardView.as_view(), name='index'),
     path("product/", include("cashier.backoffice.product.urls")),
     path("transactions/", include("cashier.backoffice.transactions.urls")),
+    path("cashier/", include("cashier.backoffice.cashier.urls")),
     path("users/", include("cashier.backoffice.users.urls")),
 ]
