@@ -1,0 +1,146 @@
+
+@media (min-width: 576px) {
+    
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    
+}
+
+ /* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    
+}
+
+ /* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+    
+}
+
+@media (min-width: 768px) {
+
+    .input-group-text {
+        background: none;
+        border: none;
+        width: 2rem;
+    }
+
+    .input-group-text i {
+        font-size: 16px;
+    }
+
+    .btn-category {
+        border-radius: .5rem;
+        height: 7rem;
+        width: 5rem;
+        box-shadow:  0 2px 2px 0 rgba(0, 0, 0, 0.19);
+        text-align: center;
+        margin: 1rem;
+        background-color: #fff;
+    }
+
+    .btn-category:hover{
+        background-color: #2457ca;
+        color: #fff;
+    }
+    
+    .btn-category img{
+        width: 3rem; 
+        margin: auto; 
+        display: block;
+    }
+
+    .btn-category p{
+        font-weight: 600;
+    }
+
+    .cate-title {
+        font-weight: 600;
+        color: #fff;
+    }
+
+
+    .card-box{
+        width: 10rem;
+        border-radius: 1rem;
+        margin-right: 1rem;
+        margin-top: 1.5rem;
+    }
+
+    .card-box img{
+        margin-top: 1rem;
+        width: 70px;
+    }
+
+    .card-order p {
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .card-order span {
+        font-size: 16px;
+        opacity: 0.5;
+    }
+
+    .cart h5{
+        margin-left: 1rem;
+        margin-top: 1rem;
+        font-weight: 600;
+    }
+
+    .cart span {
+        opacity: 0.8;
+        color: #2457ca;
+        font-weight: 600;
+    }
+
+    .card-cart img {
+        width: 3rem;
+    }
+
+    .cart {
+        display: block;
+        overflow: auto;
+    }
+
+    .cart::-webkit-scrollbar {
+        width: 2rem;
+        height: 16rem;
+        background-color: rgb(129, 2, 2); /* or add it to the track */
+      }
+      
+      /* Add a thumb */
+      .cart::-webkit-scrollbar-thumb {
+        background: #000;
+      }
+    /*.img-cart.active {
+        background-color: #f62351;
+        color: var(--bs-light);
+        width: 5rem;
+        border-radius: .5rem;
+        text-align: center;
+        justify-content: center;
+    }*/
+
+    hr{
+        border:none;
+        border-top:1px dotted rgb(22, 16, 16);
+        color:#fff;
+        background-color:#fff;
+        height:2px;
+        width:100%;
+    }
+
+    .btn-pay{
+        background-color: #2457ca;
+        padding:0.5rem 7.2rem 0.5rem 7.2rem;
+    }
+}
+
+
+
+
+
+
+

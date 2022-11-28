@@ -1,0 +1,243 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cashier</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    {% include 'backoffice/cashier/partials/css.html' %}
+  </head>
+  <body>
+    {% block content %}
+    {% include 'backoffice/cashier/partials/sidebar.html'%}
+    <main class="bg-light">
+      <div class="p-2">
+        <div class="row" style="margin: 0%;">
+        <div class="col-md-9">
+          <!-- start: Navbar -->
+          <nav class="px-2 py-4 bg-white rounded shadow-sm">
+            <h5 class="fw-bold mb-0 me-auto">Cashier</h5>
+            
+              <div class="navbar-card  mb-0  me-3">   
+                <div class="input-box fw-bold mb-0">
+                  <input type="text" class="form-control fw-bold" placeholder="search . . .">
+                  <i class="fa fa-search search-logo"></i>                    
+                </div>
+              </div>
+            </nav>
+          </div>
+          <!-- end: Navbar -->
+
+          <!-- cart -->
+          <div class="col-md-3">
+            <div class="card cart position-fixed bg-white border-0 shadow-sm" style="height: 100%; width: 100%;">
+              <h5 class="mb-3"> Current<span> Order</span></h5>
+              <div class="p-3">
+                <div class="card card-cart mb-3 border-0" style="max-width: 250px;">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <div class="text-center img-cart active">
+                        <img src="{% static 'website/img/cheeseburger.png' %}" class="img-fluid rounded-start" alt="...">
+                      </div>
+                    </div>
+                    <div class="col-md-8">
+                      <p class="text-start" style="font-size: 15px;">Cheese Burger</p>
+                      <p class="text-start text-muted" style="margin-top: -1rem; font-size:14px;">$5.3</p>
+                      <p class="text-end text-muted" style="margin-top: -1.6rem; margin-right: 0.5rem; font-size:14px;">2x</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card card-cart mb-3 border-0" style="max-width: 250px;">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <div class="text-center img-cart active">
+                        <img src="{% static 'website/img/fruit.png' %}" class="img-fluid rounded-start" alt="...">
+                      </div>
+                    </div>
+                    <div class="col-md-8">
+                      <p class="text-start" style="font-size: 15px;">Cheese Burger</p>
+                      <p class="text-start text-muted" style="margin-top: -1rem; font-size:14px;">$5.3</p>
+                      <p class="text-end text-muted" style="margin-top: -1.6rem; margin-right: 0.5rem; font-size:14px;">2x</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card card-cart mb-3 border-0" style="max-width: 250px;">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <div class="text-center img-cart active">
+                        <img src="{% static 'website/img/cheeseburger.png' %}" class="img-fluid rounded-start" alt="...">
+                      </div>
+                    </div>
+                    <div class="col-md-8">
+                      <p class="text-start" style="font-size: 15px;">Cheese Burger</p>
+                      <p class="text-start text-muted" style="margin-top: -1rem; font-size:14px;">$5.3</p>
+                      <p class="text-end text-muted" style="margin-top: -1.6rem; margin-right: 0.5rem; font-size:14px;">2x</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card card-cart mb-3 border-0" style="max-width: 250px;">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <div class="text-center img-cart active">
+                        <img src="{% static 'website/img/cheeseburger.png' %}" class="img-fluid rounded-start" alt="...">
+                      </div>
+                    </div>
+                    <div class="col-md-8">
+                      <p class="text-start" style="font-size: 15px;">Cheese Burger</p>
+                      <p class="text-start text-muted" style="margin-top: -1rem; font-size:14px;">$5.3</p>
+                      <p class="text-end text-muted" style="margin-top: -1.6rem; margin-right: 0.5rem; font-size:14px;">2x</p>
+                    </div>
+                  </div>
+                </div>
+                <p class="fw-bold py-3">Total: <span class="text-total">$12.00</span></p>
+                <hr>
+                <button type="button" class="btn text-light btn-pay" >Pay</button>
+              </div>
+            </div>
+          </div>
+          <!--end cart-->
+          
+          <!--category-->
+            <div class="py-3">
+              <div class="col-md-9">
+                <div class="row p-3">
+                  <div class="owl-carousel owl-theme">
+                    <button type="button" class="btn btn-category">
+                      <div class="card card-category mr-1" style="width: 3.6rem; height: 4rem;">
+                        <img src="{% static 'website/img/pizza.png' %}" class="card-img-top" style="width: 3rem; margin: auto; display: block;"> 
+                      </div>
+                      <p class="mt-2 ">Pizza</p>
+                    </button>
+                    <button type="button" class="btn btn-category">
+                      <div class="card card-category mr-1" style="width: 3.6rem; height: 4rem;">
+                        <img src="{% static 'website/img/soda.png' %}" class="card-img-top" style="width: 3rem; margin: auto; display: block;"> 
+                      </div>
+                      <p class="mt-2 ">Soda</p>
+                    </button>
+                    <button type="button" class="btn btn-category">
+                      <div class="card card-category mr-1" style="width: 3.6rem; height: 4rem;">
+                        <img src="{% static 'website/img/console.png' %}" class="card-img-top" style="width: 3rem; margin: auto; display: block;"> 
+                      </div>
+                      <p class="mt-2 text-truncate">Electronics</p>
+                    </button>
+                    <button type="button" class="btn btn-category">
+                      <div class="card card-category mr-1" style="width: 3.6rem; height: 4rem;">
+                        <img src="{% static 'website/img/pizza.png' %}" class="card-img-top" style="width: 3rem; margin: auto; display: block;"> 
+                      </div>
+                      <p class="mt-2 ">Pizza</p>
+                    </button>
+                    <button type="button" class="btn btn-category">
+                      <div class="card card-category mr-1" style="width: 3.6rem; height: 4rem;">
+                        <img src="{% static 'website/img/pizza.png' %}" class="card-img-top" style="width: 3rem; margin: auto; display: block;"> 
+                      </div>
+                      <p class="mt-2 ">Pizza</p>
+                    </button>
+                    <button type="button" class="btn btn-category">
+                      <div class="card card-category mr-1" style="width: 3.6rem; height: 4rem;">
+                        <img src="{% static 'website/img/pizza.png' %}" class="card-img-top" style="width: 3rem; margin: auto; display: block;"> 
+                      </div>
+                      <p class="mt-2 ">Pizza</p>
+                    </button>
+                    <button type="button" class="btn btn-category">
+                      <div class="card card-category mr-1" style="width: 3.6rem; height: 4rem;">
+                        <img src="{% static 'website/img/pizza.png' %}" class="card-img-top" style="width: 3rem; margin: auto; display: block;"> 
+                      </div>
+                      <p class="mt-2 ">Pizza</p>
+                    </button>
+                    <button type="button" class="btn btn-category">
+                      <div class="card card-category mr-1" style="width: 3.6rem; height: 4rem;">
+                        <img src="{% static 'website/img/pizza.png' %}" class="card-img-top" style="width: 3rem; margin: auto; display: block;"> 
+                      </div>
+                      <p class="mt-2 ">Pizza</p>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--end category-->
+
+          <!-- order -->
+          <div class="py-3">
+            <div class="col-md-9">
+              <h5>Choose Order</h5>
+              <div class="row">
+                <div class="card card-box col-md-3 border-0 shadow-sm mr-3">
+                  <a href="" class="btn">
+                  <div class="text-center">
+                    <img class="card-img-top" src="{% static 'website/img/cheeseburger.png' %}"  alt="...">
+                  </div>
+                  <div class="card-body card-order">
+                    <p class="card-title text-center text-truncate">Cheese Burger</p>
+                    <p class="card-text text-center"><span>$5.3</span></p>
+                  </div>
+                </a>
+                </div>
+                <div class="card card-box col-md-3 border-0 shadow-sm mr-3">
+                  <a href="" class="btn">
+                  <div class="text-center">
+                    <img class="card-img-top" src="{% static 'website/img/fruit.png' %}"  alt="...">
+                  </div>
+                  <div class="card-body card-order">
+                    <p class="card-title text-center text-truncate">Cheese Burger</p>
+                    <p class="card-text text-center"><span>$5.3</span></p>
+                  </div>
+                </a>
+                </div>
+                <div class="card card-box col-md-3 border-0 shadow-sm mr-3">
+                  <a href="" class="btn">
+                  <div class="text-center">
+                    <img class="card-img-top" src="{% static 'website/img/fish.png' %}"  alt="...">
+                  </div>
+                  <div class="card-body card-order">
+                    <p class="card-title text-center text-truncate">Cheese Burger</p>
+                    <p class="card-text text-center"><span>$5.3</span></p>
+                  </div>
+                </a>
+                </div>
+                <div class="card card-box col-md-3 border-0 shadow-sm mr-3">
+                  <a href="" class="btn">
+                  <div class="text-center">
+                    <img class="card-img-top" src="{% static 'website/img/cheeseburger.png' %}"  alt="...">
+                  </div>
+                  <div class="card-body card-order">
+                    <p class="card-title text-center text-truncate">Cheese Burger</p>
+                    <p class="card-text text-center"><span>$5.3</span></p>
+                  </div>
+                </a>
+                </div>
+                <div class="card card-box col-md-3 border-0 shadow-sm mr-3">
+                  <a href="" class="btn">
+                  <div class="text-center">
+                    <img class="card-img-top" src="{% static 'website/img/fruit.png' %}"  alt="...">
+                  </div>
+                  <div class="card-body card-order">
+                    <p class="card-title text-center text-truncate">Cheese Burger</p>
+                    <p class="card-text text-center"><span>$5.3</span></p>
+                  </div>
+                </a>
+                </div>
+                <div class="card card-box col-md-3 border-0 shadow-sm mr-3">
+                  <a href="" class="btn">
+                  <div class="text-center">
+                    <img class="card-img-top" src="{% static 'website/img/cheeseburger.png' %}"  alt="...">
+                  </div>
+                  <div class="card-body card-order">
+                    <p class="card-title text-center text-truncate">Cheese Burger</p>
+                    <p class="card-text text-center"><span>$5.3</span></p>
+                  </div>
+                </a>
+                </div>
+            </div>
+            </div>
+          </div>
+          <!--end order-->
+          
+      </div>
+      </div>
+  </main>
+    {% endblock %} 
+    
+    {% include 'backoffice/cashier/partials/scripts.html' %}
+  </body>
+</html>
